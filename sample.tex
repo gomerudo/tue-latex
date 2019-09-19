@@ -11,8 +11,24 @@
 \usepackage{jmlr2e}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usepackage[font=small,format=hang]{caption}
+\usepackage{subcaption}
+\usepackage{fontawesome}
+\usepackage{ifthen}
+\usepackage{xstring}
+\usepackage{pgfopts}
+\usepackage{tikz-uml}
+% \usepackage{algorithm2e}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usetikzlibrary{positioning, backgrounds, decorations.pathreplacing, arrows, arrows.meta, calc}
 
 % Definitions of handy macros can go here
+
+% \def\faPython{\symbol{"F3E2}}
+
 
 \newcommand{\dataset}{{\cal D}}
 \newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
@@ -28,28 +44,26 @@
 
 \begin{document}
 
-\title{Learning to reinforcement learn for Neural Architecture Search}
+\title{Learning to reinforcement learn for Neural Architecture Search\thanks{MSc thesis supervised by dr. ir. Joaquin Vanschoren at the Eindhoven University of Technology}}
+
 
 \author{\name Jorge Gomez Robles \email j.gomez.robles@student.tue.nl \\
        \addr Department of Mathematics and Computer Science\\
        Eindhoven University of Technology\\
        Eindhoven 5612 AZ, The Netherlands
-    %   \AND
-    %   \name Michael I.\ Jordan \email jordan@cs.berkeley.edu \\
-    %   \addr Division of Computer Science and Department of Statistics\\
-    %   University of California\\
-    %   Berkeley, CA 94720-1776, USA
 }
 
-\editor{Joaquin Vanschoren}
+% \editor{Joaquin Vanschoren}
 
 \maketitle
 
 \input{abstract.tex}
 \input{introduction.tex}
-% \input{preliminaries.tex}
+\input{preliminaries.tex}
 \input{related.tex}
 \input{methodology.tex}
+\input{software.tex}
+\input{experiments.tex}
 \input{results.tex}
 \input{conclusions.tex}
 
@@ -60,7 +74,10 @@
 
 \newpage
 \appendix
+% \input{appendix_related.tex}
+\input{appendix_datasets.tex}
 
-\input{appendixA.tex}
+\input{appendix_networks.tex}
+
 
 \end{document}

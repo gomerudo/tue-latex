@@ -1,0 +1,58 @@
+\section{Experiments}\label{sec:experiments}
+
+% We empirically assess the quality of the networks designed by the agent through episodes, the ability of the agent to adapt to each environment, and the runtimes of the training trials.
+
+To evaluate our framework, we conduct three experiments. The first two aim to study the behavior of the agent when challenged to design chain-structured networks, and the third one is intended to observe its behavior in the multi-branch setting. We empirically assess the quality of the networks designed by the agent through episodes, the ability of the agent to adapt to each environment, and the runtimes of the training trials.
+
+\subsection{Chain-structured networks} \label{sec:experiments:chain}
+
+% \subsubsection*{Experiment 1: the learning evolution during training}
+\textbf{Experiment 1: evolution during training.} The agent learns from the three train environments listed in Table~\ref{tab:methodology:environments:datasets}, using deep meta-RL. It starts in the \textit{omniglot} environment, continues in \textit{vgg\_flower}, and finishes in \textit{dtd} so that it faces increasingly harder classification tasks (see Appendix~\ref{app:datasets}), and the policy learned in one environment is reused in the next one. The agent interacts with each environment for $t_{max}=8000$, $t_{max}=7000$, and $t_{max}=7000$, respectively so that the agent spends more time in the first environment to develop its initial knowledge.
+%The main interest is in observing the evolution of the best rewards obtained through episodes. 
+We compare against two baselines: random search and \textsc{DeepQN} with experience replay, where the agent learns a new policy on each environment (i.e., it does not re-use the policy between trials) for $t_{max}=6500, 5500, \text{ and }7000$, respectively. Due to resources and time constraints, all $t_{max}$ values were empirically selected according to the behaviour of the rewards (see Section~\ref{sec:results}). The most relevant hyper-paremeters are set as follows:
+
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \setlength\parskip{0pt}
+    \item[-] \textsc{Environment}
+        \begin{itemize}
+            \setlength\itemsep{0em}
+            \item[-]  $d=10$. The maximum depth of a neural architecture.
+            \item[-] $\tau=10$. The maximum length of an episode.
+        \end{itemize}
+    \item[-] \textsc{A2C hyper-parameters}
+    \begin{itemize}
+        \setlength\itemsep{0em}
+        \setlength\parskip{0pt}
+        \item[-] $j=5$. The number of steps to perform before updating the A2C parameters (see Equation~\ref{eq:methodology:rl:poa:gradient}). We set the value to half the maximum depth of the networks to allow the agent to learn before the termination of an episode.
+        \item[-] $\gamma=0.9$. The discount factor for the past actions.
+        \item[-] $\eta=0.01$. The default in the OpenAI baselines~\citep{openaibaselines}.
+        \item[-] $\alpha=0.001$. The A2C learning rate set as in \textit{Learning to reinforcement learn}~\citep{LtRL}.
+    \end{itemize}
+    \item[-] \textsc{DeepQN}
+    \begin{itemize}
+        \setlength\itemsep{0em}
+        \setlength\parskip{0pt}
+        \item[-] Experience $\text{buffer size}=\frac{t_{max}}{2}$. 
+        \item[-] Target model's $\text{batch size} = 20$.
+        \item[-] $\epsilon$ with linear decay from 1.0 to 0.1. The parameter controlling the exploration of the agent.
+        \item[-] $\alpha=0.0005$. The default learning rate in the OpenAI baselines~\citep{openaibaselines}.
+    \end{itemize}
+    \item[-] \textsc{Training of the sampled networks}
+    \begin{itemize}
+        \setlength\itemsep{0em}
+        \setlength\parskip{0pt}
+        \item[-] $\text{batch size}=128$.
+        \item[-] $\text{epochs}=12$. The value used in BlockQNN~\citep{BlockQNN}.
+    \end{itemize}
+\end{itemize}
+
+% \textsc{DeepQN}: $\alpha=0.0005$, $\text{buffer size}=\frac{t_{max}}{2}$, target model's $\text{batch size} = 20$, and $\epsilon$ with linear decay from 1.0 to 0.1. \textsc{Environment}: $d=10$, $\tau=10$. \textsc{Training of the sampled networks}: $\text{batch size}=128$ and $\text{epochs}=12$.
+
+\textbf{Experiment 2: evaluation of the policy.} We fix the policy obtained in Experiment 1. The agent interacts with the evaluation environments, \textit{aircraft} and \textit{cu\_birds}, and deploys its decision-making strategy to design a neural architecture for each dataset. The interaction runs for $t_{max}=2000$ to study the performance of the policy in short evaluation trials. At the end of the interaction, we select the best two architectures per environment (i.e., the ones with the highest reward) and train them on the same datasets but applying a more intensive procedure as follows. First, we augment the capacity of the architectures by changing the number of filters in the convolution layers according to the layer's depth; i.e., $\text{number of units}=2^{4+i}$ with $i$ being the current count of convolutions while building the network  (e.g., $\text{number of units}=32 \rightarrow 64 \rightarrow 128$). Second, we stack the prediction module as described in Section~\ref{sec:methodology:nas:pss}, but we increase the number of units in the first dense layer to 4096, we use a learning rate with exponential decay, and we train the network for 100 epochs. Since the datasets that we use are resized to a shape of 84x84x3, it is not fair to compare our resulting accuracy values with those of state-of-the-art architectures that assume a higher order of shape~\citep{FineGrained2, FineGrained3, FineGrainedResults}, and neither is to train our networks (which are designed for a given input size) with bigger images. Hence, based on the baselines of~\citet{FineGrainedResults}, we use a VGG-19 network~\citep{VGGPaper} with only two blocks as our baseline on both datasets.
+
+
+\subsection{Multi-branch networks} \label{sec:experiments:multibranch}
+
+
+\textbf{Experiment 3: training on a more complex environment.} In this experiment, we extend the search space to multi-branch architectures. We consider the \textit{omniglot} environment only. The goal here is to observe the ability of the agent to design multi-branch networks through time; i.e., the number of multi-branch structures generated through training. The interaction runs for $t_{max}=20000$ time-steps because more exploration is required due to the larger action space. The hyper-parameters are the same as in Experiment 1, except that $\tau=20$ and $j=10$ because the trajectories are longer due to the shifting of the pointers controlling the predecessors, and $\text{batch size}=64$ because the concatenation operation can generate networks that require more space in memory. We train the agent from scratch two times varying the parameter $\sigma \in [0.0, 0.1]$ (see Section~\ref{sec:methodology:rl:environments}) to study its effect encouraging the generation of multi-branch structures.

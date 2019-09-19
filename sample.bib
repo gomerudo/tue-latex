@@ -317,7 +317,7 @@ author={
                Peter L. Bartlett and
                Ilya Sutskever and
                Pieter Abbeel},
-  title     = {RL{\textdollar}{\^{}}2{\textdollar}: Fast Reinforcement Learning via
+  title     = {RL$^2$: Fast Reinforcement Learning via
                Slow Reinforcement Learning},
   journal   = {CoRR},
   volume    = {abs/1611.02779},
@@ -329,3 +329,335 @@ author={
   biburl    = {https://dblp.org/rec/bib/journals/corr/DuanSCBSA16},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
+
+@article{A2C,
+  author    = {Volodymyr Mnih and
+               Adri{\`{a}} Puigdom{\`{e}}nech Badia and
+               Mehdi Mirza and
+               Alex Graves and
+               Timothy P. Lillicrap and
+               Tim Harley and
+               David Silver and
+               Koray Kavukcuoglu},
+  title     = {Asynchronous Methods for Deep Reinforcement Learning},
+  journal   = {CoRR},
+  volume    = {abs/1602.01783},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1602.01783},
+  archivePrefix = {arXiv},
+  eprint    = {1602.01783},
+  timestamp = {Mon, 13 Aug 2018 16:47:40 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/MnihBMGLHSK16},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{PCC,
+  author    = {Kaiming He and
+               Xiangyu Zhang and
+               Shaoqing Ren and
+               Jian Sun},
+  title     = {Identity Mappings in Deep Residual Networks},
+  journal   = {CoRR},
+  volume    = {abs/1603.05027},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1603.05027},
+  archivePrefix = {arXiv},
+  eprint    = {1603.05027},
+  timestamp = {Wed, 17 Apr 2019 17:23:45 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/HeZR016},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{Net2Net,
+  title={Net2Net: Accelerating Learning via Knowledge Transfer},
+  author={Tianqi Chen and Ian J. Goodfellow and Jonathon Shlens},
+  journal={CoRR},
+  year={2015},
+  volume={abs/1511.05641}
+}
+
+@article{TreeLSTM,
+  author    = {Kai Sheng Tai and
+               Richard Socher and
+               Christopher D. Manning},
+  title     = {Improved Semantic Representations From Tree-Structured Long Short-Term
+               Memory Networks},
+  journal   = {CoRR},
+  volume    = {abs/1503.00075},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1503.00075},
+  archivePrefix = {arXiv},
+  eprint    = {1503.00075},
+  timestamp = {Mon, 13 Aug 2018 16:48:20 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/TaiSM15},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{Adam,
+abstract = {We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order mo-ments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpre-tations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical con-vergence properties of the algorithm and provide a regret bound on the conver-gence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm.},
+archivePrefix = {arXiv},
+arxivId = {arXiv:1412.6980v9},
+author = {Kingma, Diederik P and Ba, Jimmy Lei},
+eprint = {arXiv:1412.6980v9},
+journal = {ICLR: International Conference on Learning Representations},
+title = {{Adam: A method for stochastic gradient descent}},
+year = {2015}
+}
+
+@misc{RMSProp,
+  title={{Lecture 6.5---RmsProp: Divide the gradient by a running average of its recent magnitude}},
+  author={Tieleman, T. and Hinton, G.},
+  howpublished={COURSERA: Neural Networks for Machine Learning},
+  year={2012}
+}
+
+@INPROCEEDINGS{MonteCarlo, 
+author={B. {Bouzy} and G. {Chaslot}}, 
+booktitle={2006 IEEE Symposium on Computational Intelligence and Games}, 
+title={Monte-Carlo Go Reinforcement Learning Experiments}, 
+year={2006}, 
+volume={}, 
+number={}, 
+pages={187-194}, 
+keywords={computer games;learning (artificial intelligence);reinforcement learning;pattern urgencies computing;Monte-Carlo Go architecture;Go-playing program;Indigo;pattern database;Learning;Humans;Computer architecture;Computer science;Performance evaluation;Vocabulary;Distributed computing;Computational modeling;Databases;Computer Go;Monte-Carlo;Reinforcement Learning}, 
+doi={10.1109/CIG.2006.311699}, 
+ISSN={2325-4270}, 
+month={May},}
+
+@Article{Qlearning,
+author="Watkins, Christopher J. C. H.
+and Dayan, Peter",
+title="Q-learning",
+journal="Machine Learning",
+year="1992",
+month="May",
+day="01",
+volume="8",
+number="3",
+pages="279--292",
+abstract="Q-learning (Watkins, 1989) is a simple way for agents to learn how to act optimally in controlled Markovian domains. It amounts to an incremental method for dynamic programming which imposes limited computational demands. It works by successively improving its evaluations of the quality of particular actions at particular states.",
+issn="1573-0565",
+doi="10.1007/BF00992698",
+url="https://doi.org/10.1007/BF00992698"
+}
+
+@article{TRPO,
+  author    = {John Schulman and
+               Sergey Levine and
+               Philipp Moritz and
+               Michael I. Jordan and
+               Pieter Abbeel},
+  title     = {Trust Region Policy Optimization},
+  journal   = {CoRR},
+  volume    = {abs/1502.05477},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1502.05477},
+  archivePrefix = {arXiv},
+  eprint    = {1502.05477},
+  timestamp = {Mon, 13 Aug 2018 16:48:08 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/SchulmanLMJA15},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@INPROCEEDINGS{Reinforce,
+    author = {Ronald J. Williams},
+    title = {Simple statistical gradient-following algorithms for connectionist reinforcement learning},
+    booktitle = {Machine Learning},
+    year = {1992},
+    pages = {229--256}
+}
+
+@phdthesis{ActorCritic,
+ author = {Konda, Vijaymohan},
+ title = {Actor-critic Algorithms},
+ year = {2002},
+ note = {AAI0804543},
+ publisher = {Massachusetts Institute of Technology},
+ address = {Cambridge, MA, USA},
+} 
+
+
+@article{PPO,
+  author    = {John Schulman and
+               Filip Wolski and
+               Prafulla Dhariwal and
+               Alec Radford and
+               Oleg Klimov},
+  title     = {Proximal Policy Optimization Algorithms},
+  journal   = {CoRR},
+  volume    = {abs/1707.06347},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1707.06347},
+  archivePrefix = {arXiv},
+  eprint    = {1707.06347},
+  timestamp = {Mon, 13 Aug 2018 16:47:34 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/SchulmanWDRK17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{DQN,
+  author    = {Volodymyr Mnih and
+               Koray Kavukcuoglu and
+               David Silver and
+               Alex Graves and
+               Ioannis Antonoglou and
+               Daan Wierstra and
+               Martin A. Riedmiller},
+  title     = {Playing Atari with Deep Reinforcement Learning},
+  journal   = {CoRR},
+  volume    = {abs/1312.5602},
+  year      = {2013},
+  url       = {http://arxiv.org/abs/1312.5602},
+  archivePrefix = {arXiv},
+  eprint    = {1312.5602},
+  timestamp = {Mon, 13 Aug 2018 16:47:42 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/MnihKSGAWR13},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{AmoebaNet,
+  author    = {Esteban Real and
+               Alok Aggarwal and
+               Yanping Huang and
+               Quoc V. Le},
+  title     = {Regularized Evolution for Image Classifier Architecture Search},
+  journal   = {CoRR},
+  volume    = {abs/1802.01548},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1802.01548},
+  archivePrefix = {arXiv},
+  eprint    = {1802.01548},
+  timestamp = {Mon, 13 Aug 2018 16:48:15 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1802-01548},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{FineGrainedResults,
+  author    = {Tao Hu and
+               Honggang Qi},
+  title     = {See Better Before Looking Closer: Weakly Supervised Data Augmentation
+               Network for Fine-Grained Visual Classification},
+  journal   = {CoRR},
+  volume    = {abs/1901.09891},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1901.09891},
+  archivePrefix = {arXiv},
+  eprint    = {1901.09891},
+  timestamp = {Sat, 02 Feb 2019 16:56:00 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1901-09891},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{FineGrained2,
+  author    = {Yin Cui and
+               Yang Song and
+               Chen Sun and
+               Andrew Howard and
+               Serge J. Belongie},
+  title     = {Large Scale Fine-Grained Categorization and Domain-Specific Transfer
+               Learning},
+  journal   = {CoRR},
+  volume    = {abs/1806.06193},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1806.06193},
+  archivePrefix = {arXiv},
+  eprint    = {1806.06193},
+  timestamp = {Mon, 13 Aug 2018 16:49:00 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1806-06193},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{FineGrained3,
+  author    = {Pei Guo and
+               Ryan Farrell},
+  title     = {Fine-grained Visual Categorization using {PAIRS:} Pose and Appearance
+               Integration for Recognizing Subcategories},
+  journal   = {CoRR},
+  volume    = {abs/1801.09057},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1801.09057},
+  archivePrefix = {arXiv},
+  eprint    = {1801.09057},
+  timestamp = {Mon, 13 Aug 2018 16:47:50 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1801-09057},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@ARTICLE{RLTraffic, 
+author={I. {Arel} and C. {Liu} and T. {Urbanik} and A. G. {Kohls}}, 
+journal={IET Intelligent Transport Systems}, 
+title={Reinforcement learning-based multi-agent system for network traffic signal control}, 
+year={2010}, 
+volume={4}, 
+number={2}, 
+pages={128-135}, 
+keywords={control engineering computing;feedforward neural nets;learning (artificial intelligence);multi-agent systems;road traffic;scheduling;traffic control;reinforcement learning-based multi-agent system;network traffic signal control;traffic signal scheduling;longest-queue-first algorithm;local traffic statistics;Q-Learning algorithm;feedforward neural network;multiintersection vehicular networks}, 
+doi={10.1049/iet-its.2009.0070}, 
+ISSN={1751-956X}, 
+month={June},}
+
+@inproceedings{RLresourcemanagement,
+ author = {Mao, Hongzi and Alizadeh, Mohammad and Menache, Ishai and Kandula, Srikanth},
+ title = {Resource Management with Deep Reinforcement Learning},
+ booktitle = {Proceedings of the 15th ACM Workshop on Hot Topics in Networks},
+ series = {HotNets '16},
+ year = {2016},
+ isbn = {978-1-4503-4661-0},
+ location = {Atlanta, GA, USA},
+ pages = {50--56},
+ numpages = {7},
+ url = {http://doi.acm.org/10.1145/3005745.3005750},
+ doi = {10.1145/3005745.3005750},
+ acmid = {3005750},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@article{RLRobotics,
+ author = {Kober, Jens and Bagnell, J. Andrew and Peters, Jan},
+ title = {Reinforcement Learning in Robotics: A Survey},
+ journal = {Int. J. Rob. Res.},
+ issue_date = {September 2013},
+ volume = {32},
+ number = {11},
+ month = sep,
+ year = {2013},
+ issn = {0278-3649},
+ pages = {1238--1274},
+ numpages = {37},
+ url = {http://dx.doi.org/10.1177/0278364913495721},
+ doi = {10.1177/0278364913495721},
+ acmid = {2528334},
+ publisher = {Sage Publications, Inc.},
+ address = {Thousand Oaks, CA, USA},
+ keywords = {Reinforcement learning, learning control, robot, survey},
+} 
+
+@article{MAML,
+  author    = {Chelsea Finn and
+               Pieter Abbeel and
+               Sergey Levine},
+  title     = {Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks},
+  journal   = {CoRR},
+  volume    = {abs/1703.03400},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1703.03400},
+  archivePrefix = {arXiv},
+  eprint    = {1703.03400},
+  timestamp = {Mon, 13 Aug 2018 16:47:43 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/FinnAL17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@INPROCEEDINGS{VGGPaper, 
+author={S. {Liu} and W. {Deng}}, 
+booktitle={2015 3rd IAPR Asian Conference on Pattern Recognition (ACPR)}, 
+title={Very deep convolutional neural network based image classification using small training sample size}, 
+year={2015}, 
+volume={}, 
+number={}, 
+pages={730-734}, 
+keywords={image classification;neural nets;image classification;Krizhevsky;imagenet large scale visual recognition challenge;deep convolutional neural networks;D-CNNs;ImageNet datasets;CIFAR-10;VGG-16 network;batch normalization;Convolution;Training;Error analysis;Computational modeling;Neural networks;Acceleration;Data models}, 
+doi={10.1109/ACPR.2015.7486599}, 
+ISSN={}, 
+month={Nov},}

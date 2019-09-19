@@ -1,1 +1,33 @@
-\section{Conclusions}\label{sec:conclusions}
+\section{Conclusions and future work}\label{sec:conclusions}
+
+% TODO: work in progress
+In this work, we presented the first application of deep meta-RL in the NAS setting. Firstly, we investigated the advantages of deep meta-RL against standard RL on the relatively simple scenario of chain-structured architectures. Despite resource limitations (1 GPU only), we observed that a policy learned using deep meta-RL can be transferred to other environments and quickly designs architectures with higher and more consistent accuracy than standard RL. Nevertheless, standard RL outperforms meta-RL when both learn a policy from scratch. We also note that the meta-RL agent exhibited adaptive behavior during the training, changing its strategy according to the dataset in question.  Secondly, we analyzed the adaptability of the agent during evaluation (i.e., when the policy's weights are fixed) and the quality of the networks that it designs for previously unseen datasets. In our experiment, the agent was not able to adapt its strategy to different environments, but the performance of the networks delivered was better than the performance of a human-designed network, showing that the knowledge developed by our agent in the training environments is meaningful in others. Thirdly, we extended our approach to a more complex NAS scenario with a multi-branch search space. In this setting, the meta-RL agent was not able to deeply explore the multi-branch search space designed and settled for chain-structured networks instead.
+
+We conclude that deep meta-RL does provide an advantage over standard RL when transferring is enabled, and it can adapt to environments during training. 
+From all these observations, we advice future work to focus on pre-training the agent on more environments and for longer to perform better on unseen environments, hyper-parameter tuning of the deep meta-RL (specifically to control the exploration of the agent), exploring other RL algorithms (next to AC2) in a meta-RL framework, refining or redesigning the datasets used to avoid low accuracy values that might affect the learning of the agent, proposing other performance estimation strategies than help to reduce the cost of NAS, and redesigning the action space for the case of a multi-branch search space. 
+
+We conclude that deep meta-RL does provide an advantage over standard RL when transferring is enabled, and it can adapt to different environments during training. Moreover, we believe that it is possible to strengthen the deep-meta RL framework in future work. Specifically, we propose to investigate the following aspects:
+
+
+
+Additionally, we recommend to benchmark other RL algorithms on the same NAS environments. We believe that the system that we developed (see Section~\ref{sec:software}) will help to encourage research in these directions.
+
+%and evaluation of the methodology in a more complex search space such as multi-branch networks.
+
+% \textbf{TODO:} Add  conclusions. In short:
+% \begin{itemize}
+%     \item deep meta-RL shows efficient during training
+%     \item The policy does not adapt during evaluation, but it designs good architectures, considering the hardness of the datasets.
+%     \item Exploration is achieved
+%     \item multi-branch structures are not explored, the framework should be modified. (Still thinking of possibilities: maybe re-formulate the rewards for the shifting operations, predict the layer from the policy - which is similar to NAS by Google.)
+% \end{itemize}
+
+% Future work:
+% \begin{itemize}
+%     \item More training
+%     \item hyper-parameter tuning; specially the entropy regularizer
+%     \item explore other RL algorithms
+%     \item explore other datasets to avoid low accuracies that might trap the agent
+%     \item explore alternatives for multi-branch structures
+    
+% \end{itemize}

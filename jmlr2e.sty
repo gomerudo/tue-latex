@@ -219,9 +219,6 @@
 \def\@starteditor{\noindent \small {\bf Supervisor:~}}
 \def\@endeditor{\normalsize}
 
-% \def\@startsupervisor{\noindent \small {\bf Supervisor:~}}
-% \def\@endsupervisor{\normalsize}
-
 \def\@maketitle{\vbox{\hsize\textwidth
  \linewidth\hsize \vskip \beforetitskip
  {\begin{center} \Large\bf \@title \par \end{center}} \vskip \aftertitskip
@@ -232,9 +229,8 @@
   \def\AND{\@endauthor\rm\hss \vskip \interauthorskip \@startauthor}
   \@startauthor \@author \@endauthor}
 
-  \vskip \aftermaketitskip
-  \noindent \@starteditor \@editor \@endeditor
-%   \noindent \@startsupervisor \@supervisor \@endsupervisor
+%   \vskip \aftermaketitskip
+%   \noindent \@starteditor \@editor \@endeditor
   \vskip \aftermaketitskip
 }}
 
